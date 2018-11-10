@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body >
+{{>navbar}}
+<div class = "col-lg-3 col-lg-offset-4">
+
+</div>
+
+
+<div class = "container" style="margin-left:20%">
+
+<div style="margin-top: 40px;">
+	<h1  style="font-family: 'Raleway', sans-serif; margin-left: 15%; font-size: 50px"> Where Are You Going? </h1> 
+</div>
+
+
+<div style="text-align:center;"> 
+
+
+<div style="float: left;">
+<h style="font-family: 'Raleway', sans-serif;"> Enter Zipcode: </h5> 
+</div>
+
+<div style="float:right; margin-right: 15%">
+<form action="/explore" method="POST" style="width: 550px;">
+	<input type="text" class="form-control" name="location" placeholder="location" style="width:50%">
+	
+
+	<button style="margin-top: 5px">go</button>
+	</div>
+</div>
+
+</form>
+</div>
+
+
+
+
+
+</form>
+
+
+  {{#each stores}}
+	<div style="background: #BCC5D1; margin-bottom: 20px; width: 70%; padding:10px; border-radius: 20px"> 
+		<ul style="text-decoration: none; list-style: none">
+		<li> <h2 class="text-center" style="font-family: 'Raleway', sans-serif; "> {{this.name}} </h2> </li>
+			<ul style="text-decoration: none; list-style: none">
+				<li><h3 style="font-family: 'Raleway",sans-serif;"> Address: {{this.address_obj.address_string}} </h3></li>
+    		<li> <h3 style="font-family: 'Raleway",sans-serif;"> Rating: {{this.rating}} </h3></li>
+    		
+    		<li><h3 style="font-family: 'Raleway",sans-serif;"> Kids: {{this.children}} </h3></li>
+    		<li><h3 style="font-family: 'Raleway",sans-serif;"> Insurance: {{this.insurance}} </h3></li>
+    		<li><h3 style="font-family: 'Raleway",sans-serif;"> <a href= {{this.web_url}}> Website </h3> </a></li>
+
+
+    	</ul>
+    	</ul>
+	</div>
+  {{/each}}
+
+
+</body>
+
+</html>
