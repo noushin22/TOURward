@@ -10,36 +10,36 @@ var mongo = require('mongodb');
 const port = process.env.PORT || 8000;
 
 
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/tour-ward";
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/tour-ward";
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  console.log("Database created!");
-  db.close();
-});
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   console.log("Database created!");
+//   db.close();
+// });
 
-var url = "mongodb://localhost:27017/";
+// var url = "mongodb://localhost:27017/";
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("tour-ward");
-  dbo.createCollection("Users", function(err, res) {
-    if (err) throw err;
-    console.log("Collection created!");
-    db.close();
-  });
-});
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("tour-ward");
+//   dbo.createCollection("Users", function(err, res) {
+//     if (err) throw err;
+//     console.log("Collection created!");
+//     db.close();
+//   });
+// });
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("tour-ward");
-  dbo.createCollection("Volunteer", function(err, res) {
-    if (err) throw err;
-    console.log("Collection created!");
-    db.close();
-  });
-});
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("tour-ward");
+//   dbo.createCollection("Volunteer", function(err, res) {
+//     if (err) throw err;
+//     console.log("Collection created!");
+//     db.close();
+//   });
+// });
 
 
 app.use(bodyParser.urlencoded({extended: true}));
