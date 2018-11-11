@@ -67,7 +67,7 @@ app.get('/local', (req, res) => {
 });
 
 app.get('/places', (req, res) => {
-	res.render('local.hbs');
+	res.render('places.hbs');
 });
 
 
