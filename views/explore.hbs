@@ -3,6 +3,15 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+<style>
+	body{
+		background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQUrv7f2sR7kOCRjJyykmtiuWIHn0LGTzjNbCbJnyny8kS39W_');
+	background-size: cover;
+	}
+
+
+</style>
+
 </head>
 
 <body >
@@ -20,45 +29,41 @@
 
 
 <div style="text-align:center;"> 
+<div style="margin-left: 15%;">
 
-
-<div style="float: left;">
-<h style="font-family: 'Raleway', sans-serif;"> Enter Zipcode: </h5> 
-</div>
-
-<div style="float:right; margin-right: 15%">
-<form action="/explore" method="POST" style="width: 550px;">
+<form action="/explore" method="POST" style="width: 950px;">
 	<input type="text" class="form-control" name="location" placeholder="location" style="width:50%">
 	
-
-	<button style="margin-top: 5px">go</button>
+	<button>go</button>
 	</div>
-</div>
-
-</form>
-</div>
-
-
-
 
 
 </form>
+</div>
 
 
   {{#each stores}}
-	<div style="background: #BCC5D1; margin-bottom: 20px; width: 70%; padding:10px; border-radius: 20px"> 
+	<div style="background: #BCC5D1; margin-bottom: 20px; width: 70%; padding:10px; border-radius: 20px; margin-left: 15%"> 
 		<ul style="text-decoration: none; list-style: none">
 		<li> <h2 class="text-center" style="font-family: 'Raleway', sans-serif; "> {{this.name}} </h2> </li>
 			<ul style="text-decoration: none; list-style: none">
 				<li><h3 style="font-family: 'Raleway",sans-serif;"> Address: {{this.address_obj.address_string}} </h3></li>
-    		<li> <h3 style="font-family: 'Raleway",sans-serif;"> Rating: {{this.rating}} </h3></li>
+
+    		<li> 
+    			<img src={{rating_image_url}}>
+
+    		</h3></li>
+
+    		<li> 
+    			<h3> <a href="/local">Meet a Local</a> </h3>
+
+    		</h3></li>
+    	
+
     		
-    		<li><h3 style="font-family: 'Raleway",sans-serif;"> Kids: {{this.children}} </h3></li>
-    		<li><h3 style="font-family: 'Raleway",sans-serif;"> Insurance: {{this.insurance}} </h3></li>
-    		<li><h3 style="font-family: 'Raleway",sans-serif;"> <a href= {{this.web_url}}> Website </h3> </a></li>
-
-
     	</ul>
+
+
     	</ul>
 	</div>
   {{/each}}

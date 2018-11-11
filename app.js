@@ -45,7 +45,7 @@ app.post('/explore', (req, res) => {
 		console.log(lat);
 		console.log(lng);
 
-		var tripAdvisor = `http://api.tripadvisor.com/api/partner/2.0/map/${lat},${lng}?key=03367A639FC54369B6E1482C58EC23AF`;
+		var tripAdvisor = `http://api.tripadvisor.com/api/partner/2.0/map/${lat},${lng}/attractions?key=03367A639FC54369B6E1482C58EC23AF`;
 		
 		return axios.get(tripAdvisor);
 	
@@ -58,14 +58,17 @@ app.post('/explore', (req, res) => {
 
 		})
 
-
-
+});
 });
 
 
-
+app.get('/local', (req, res) => {
+	res.render('local.hbs');
 });
 
+app.get('/places', (req, res) => {
+	res.render('local.hbs');
+});
 
 
 
