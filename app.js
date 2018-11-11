@@ -110,6 +110,11 @@ app.get('/aboutus', (req, res) => {
 	res.render('aboutus.hbs');
 });
 
+app.get('/volunteer', (req, res) => {
+	res.render('volunteer.hbs');
+});
+
+
 
 
 app.listen(process.env.PORT || 8000, function(){
