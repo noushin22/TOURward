@@ -70,6 +70,10 @@ app.get('/places', (req, res) => {
 	res.render('places.hbs');
 });
 
+app.get('/localuser', (req, res) => {
+	res.render('localuser.hbs');
+});
+
 
 
 app.listen(process.env.PORT || 8000, function(){
